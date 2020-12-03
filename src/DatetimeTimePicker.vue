@@ -137,9 +137,9 @@ export default {
           return '12 pm'
         }
         if (numHour < 12) {
-          return numHour + " am"
+          return numHour + ' am'
         }
-        return numHour - 12 + " pm"
+        return numHour - 12 + ' pm'
       }
       return hour
     }
