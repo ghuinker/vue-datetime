@@ -35,6 +35,7 @@
           :hour="hour"
           :minute="minute"
           :use12-hour="use12Hour"
+          :use24-period-hour="use24PeriodHour"
           :hour-step="hourStep"
           :minute-step="minuteStep"
           :min-time="minTime"
@@ -90,6 +91,10 @@ export default {
       default: 'date'
     },
     use12Hour: {
+      type: Boolean,
+      default: false
+    },
+    use24PeriodHour: {
       type: Boolean,
       default: false
     },

@@ -22,6 +22,7 @@
           :datetime="popupDate"
           :phrases="phrases"
           :use12-hour="use12Hour"
+          :use24-period-hour="use24PeriodHour"
           :hour-step="hourStep"
           :minute-step="minuteStep"
           :min-datetime="popupMinDatetime"
@@ -100,6 +101,10 @@ export default {
       }
     },
     use12Hour: {
+      type: Boolean,
+      default: false
+    },
+    use24PeriodHour: {
       type: Boolean,
       default: false
     },

@@ -284,6 +284,26 @@ describe('DatetimePopup.vue', function () {
       })
     })
 
+    it('should pass use 24 period hour to time picker', function (done) {
+      const vm = createVM(this,
+        `<DatetimePopup :datetime="datetime" type="datetime" use24-period-hour></DatetimePopup>`,
+        {
+          components: { DatetimePopup },
+          data () {
+            return {
+              datetime: LuxonDatetime.local()
+            }
+          }
+        })
+
+      vm.$('.vdatetime-popup__actions__button--confirm').click()
+
+      vm.$nextTick(() => {
+        expect(vm.$findChild('.vdatetime-time-picker').use24PeriodHour).to.be.equal(true)
+        done()
+      })
+    })
+
     it('should pass time steps to time picker', function (done) {
       const vm = createVM(this,
         `<DatetimePopup :datetime="datetime" type="datetime" :hour-step="2" :minute-step="15"></DatetimePopup>`,

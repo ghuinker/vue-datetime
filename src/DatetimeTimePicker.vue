@@ -30,6 +30,10 @@ export default {
       type: Boolean,
       default: false
     },
+    use24PeriodHour: {
+      type: Boolean,
+      default: false
+    },
     hourStep: {
       type: Number,
       default: 1
@@ -124,6 +128,18 @@ export default {
           return numHour - 12
         }
         return numHour
+      }
+      if (this.use24PeriodHour) {
+        if (numHour === 0) {
+          return '12 am'
+        }
+        if (numHour === 12) {
+          return '12 pm'
+        }
+        if (numHour < 12) {
+          return numHour + " am"
+        }
+        return numHour - 12 + " pm"
       }
       return hour
     }
